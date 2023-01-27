@@ -14,6 +14,7 @@ class Reminder extends Component
         'title',
         'description',
         'reminder_status_id' => 1,
+        'company_id'
     ];
 
     public function saveReminder()
