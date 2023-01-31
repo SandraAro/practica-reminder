@@ -11,7 +11,6 @@ trait selectsTrait
     protected function loadReminder()
     {
         $this->reminders = Reminder::get();
-        dd($this->reminders);
     }
 
 }

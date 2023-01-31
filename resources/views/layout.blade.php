@@ -10,6 +10,7 @@
 
    @livewireStyles
    <link rel="stylesheet" href="https://boxy.pages.dev/css/boxy.min.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap-grid.min.css"/>
 </head>
 <body>
     @yield('content')

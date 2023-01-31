@@ -17,10 +17,14 @@ class Reminder extends Component
         'company_id'
     ];
 
+    public function mount()
+    {
+        $this->loadReminder();
+    }
+
     public function saveReminder()
     {
         $reminder = ModelsReminder::create($this->reminder);
-        dd($reminder);
         $this->loadReminder();
     }
 
