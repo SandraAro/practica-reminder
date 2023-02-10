@@ -22,4 +22,9 @@ class Reminder extends Model
     {
         return $this->hasOne(ReminderStatus::class, 'id', 'reminder_status_id');
     }
+
+    public function company()
+    {
+        return $this->hasOne(Company::class, 'id', 'company_id');
+    }
 }

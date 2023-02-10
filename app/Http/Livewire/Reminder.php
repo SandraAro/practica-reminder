@@ -13,7 +13,6 @@ class Reminder extends Component
     public $reminder = [
         'title',
         'description',
-        'reminder_status_id' => 1,
         'company_id',
         'date'
     ], $modal= [], $changeStatus= [];
@@ -33,6 +32,7 @@ class Reminder extends Component
 
     public function saveReminder()
     {
+        $this->reminder['reminder_status_id'] = 1;
         ModelsReminder::create($this->reminder);
         $this->loadReminder();
         $this->reminder =[];

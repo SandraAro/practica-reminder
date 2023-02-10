@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/reminders', function () {
     return view('content.reminder');
 });
+Route::get('/statusreminders', function () {
+    return view('content.status-reminders');
+});

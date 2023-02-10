@@ -15,6 +15,18 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap-grid.min.css"/>
 </head>
 <body>
+    <header class="b-header" gradient bg="black">
+        <a href="/" class="b-header-logo">AppsCode</a>
+        <div class="b-header-content">
+            <div class="b-header-fixed">
+                <a href="/statusreminders" class="b-btn-neon fw-bold" rd="lg" color="blue">Crear Estados</a>
+                <a href="/reminders" class="b-btn-neon fw-bold" rd="lg" color="blue">Recordatorios</a>
+            </div>
+        </div>
+        {{-- <div class="b-header-fixed">
+          <a href="https://github.com/hetziel/boxy" class="b-btn" color="default"><i class="fa-brands fa-github"></i> Github</a>
+        </div> --}}
+    </header>
     @yield('content')
 
     @livewireScripts
