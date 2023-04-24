@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Http\Traits\selectsTrait;
 use App\Models\Reminder as ModelsReminder;
 use Livewire\Component;
+use PhpParser\Node\Stmt\Switch_;
 
 class Reminder extends Component
 {
@@ -28,7 +29,6 @@ class Reminder extends Component
             // dd($this->changeStatus[$reminder->id]);
         }
     }
-
 
     public function saveReminder()
     {
@@ -59,7 +59,28 @@ class Reminder extends Component
     {
         $reminder = ModelsReminder::find($id);
         $reminder->update(['reminder_status_id' => $this->changeStatus[$id]]);
-        $this->loadRemindersStatuses();
+        $this->loadReminder();
+    }
+
+    public function changeColor($status)
+    {
+        switch ($status) {
+            case '1':
+                return 'bg-warning';
+                break;
+            case '2':
+                return 'bg-info';
+                break;
+            case '3':
+                return 'bg-success';
+                break;
+            case '4':
+                return 'bg-danger';
+                break;
+            case '5':
+                return 'bg-secondary';
+                break;
+        }
     }
 
     public function render()

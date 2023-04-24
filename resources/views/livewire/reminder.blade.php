@@ -54,7 +54,7 @@
                         <div class="div-6">
                             <span class="badge" bg="indigo" tx="white">{{ $reminder->date }}</span>
                         </div>
-                            <select class="div-6 b-select mt1" night sm wire:change="changeStatus({{$reminder->id}})" wire:model="changeStatus.{{$reminder->id}}" bg="blue 2">
+                            <select class="div-6 b-select mt1 {{$this->changeColor($reminder->status->id)}}" night sm wire:change="changeStatus({{$reminder->id}})" wire:model="changeStatus.{{$reminder->id}}" >
                                 <option>Selecciona el estado</option>
                                 @foreach ($remindersStatuses as $key => $status)
                                     <option value="{{$key}}">{{$status}}</option>
@@ -83,6 +83,24 @@
         </div>
         @endif
         @endforeach
-        {{-- </div> --}}
+
+        {{-- nuevo diseño de card  --}}
+        <div class="div-sm-12 div-lg-4 p1">
+            <div class="b-card-x w100" bg="blue 1" blur night hover shadow one>
+                <div bx-head class="flex" bg="dark-gray" capsule>
+                    <h2 class="expand">Titulos</h2>
+                    <button class="b-btn" icon>
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+                <div bx-content bg="white 1" capsule>
+                    <span>Descripcion</span>
+                </div>
+                <div bx-footer capsule>
+                    <span>Ver más</span>
+                </div>
+            </div>
+        </div>
+        {{-- fin --}}
     </div>
 </div>

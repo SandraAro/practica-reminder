@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\incidencias-laravel"
+		},
+		{
+			"path": "..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\JavaScript"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "practica-reminders"
+	}
+}

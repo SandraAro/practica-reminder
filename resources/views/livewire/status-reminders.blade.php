@@ -9,7 +9,7 @@
                 <div class="b-input-area ">
                     <label tx="white">Nombre:</label>
                     <div class="b-input div-sm-12 div-lg-8" color="white">
-                        <input type="text" placeholder="titulo" bg="blue 2" tx="white" wire:model.defer='reminder.title' />
+                        <input type="text" placeholder="titulo" bg="blue 2" tx="white" wire:model.defer='status.title'/>
                     </div>
                 </div>
                 {{-- <div class="b-input-area div-sm-12 div-lg-8">
@@ -32,7 +32,7 @@
                 </div> --}}
             </div>
             <div bx-section>
-                <button class="b-btn mt2" size="sm" rd="all" color="sandra" wire:click="saveReminder">Guardar</button>
+                <button class="b-btn mt2" size="sm" rd="all" color="sandra" wire:click="saveStatus()">Guardar</button>
             </div>
         </div>
     </div>

@@ -32,6 +32,6 @@
     @livewireScripts
     <script type="text/javascript" src="{{asset('vendor/boxy/boxy.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('vendor/fontawesome-free-6.1.1-web/js/all.js')}}"></script>
-    <script>boxyVersion(false)</script>
+    <script>boxyVersion(true)</script>
 </body>
 </html>
