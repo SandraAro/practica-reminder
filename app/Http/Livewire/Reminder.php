@@ -16,7 +16,7 @@ class Reminder extends Component
         'description',
         'company_id',
         'date'
-    ], $modal= [], $changeStatus= [];
+    ], $modal= [], $changeStatus= [], $title, $isEdit = [];
 
     public function mount()
     {
@@ -36,6 +36,22 @@ class Reminder extends Component
         ModelsReminder::create($this->reminder);
         $this->loadReminder();
         $this->reminder =[];
+    }
+
+    public function editTitle($id, $title)
+    {
+        $this->isEdit[$id] = true;
+        $this->title = $title;
+
+    }
+
+    public function update($id)
+    {
+        $reminder = ModelsReminder::find($id);
+        $reminder->update(['title' => $this->title]);
+        $this->isEdit[$id] = false;
+        $this->title = null;
+        $this->loadReminders();
     }
 
     public function delete($id, $confirm = false)

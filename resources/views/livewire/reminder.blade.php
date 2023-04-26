@@ -69,7 +69,19 @@
               <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Recordatorios</h5>
-                    <button type="button" class="btn-close" wire:click="closeModal"></button>
+                        <div class="col-8">
+                        @if (@$isEdit[$reminder->id])
+                           <input autofocus type="text" wire:model="title" wire:keydown.enter="update('{{$reminder->id}}')"/>
+                        @else
+                            <h4 class="fw-bold text-info" wire:click="editTitle('{{$reminder->id}}','{{$reminder->title}}')">{{$reminder->title}}</h4>
+                        @endif
+                        </div>
+                        <div class="col-4 d-flex justify-content-end p-0 align-items-start">
+                            <button type="button" class="btn-close" wire:click="closeModal"></button>
+                            {{-- <button class="btn btn-danger btn-sm" wire:click="delete({{$reminder->id}})" >
+                                <i class="fa-solid fa-trash"></i>
+                            </button> --}}
+                        </div>
                 </div>
                 <div class="modal-body">
                     <p>¿Eliminar recordatorio?</p>
