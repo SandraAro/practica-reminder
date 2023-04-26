@@ -42,9 +42,19 @@
                 <div class="b-card w100" bg="blue 1" blur night hover shadow>
                     <div bx-title tx="sandra" class="flex" bg="dark-gray" capsule>
                         <h2 class="fw-bold m0 expand" tx="blue">{{ $reminder->title }}</h2>
-                        <button icon class="b-btn" wire:click="delete({{ $reminder->id }})" color="red">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
+                        {{-- <button type="button" class="btn-close" wire:click="closeModal"></button> --}}
+                            {{-- <div class="col-8">
+                            @if (@$isEdit[$reminder->id])
+                               <input autofocus type="text" wire:model="title" wire:keydown.enter="update('{{$reminder->id}}')"/>
+                            @else
+                                <h4 class="fw-bold text-info" wire:click="editTitle('{{$reminder->id}}','{{$reminder->title}}')">{{$reminder->title}}</h4>
+                            @endif
+                            </div>
+                            <div class="col-4 d-flex justify-content-end p-0 align-items-start">
+                                <button icon class="b-btn" wire:click="delete({{ $reminder->id }})" color="red">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div> --}}
                     </div>
                     <div bx-section capsule>
                         <p tx="white" class="div-12 mb-2">{{ $reminder->description }}</p>
@@ -69,19 +79,9 @@
               <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Recordatorios</h5>
-                        <div class="col-8">
-                        @if (@$isEdit[$reminder->id])
-                           <input autofocus type="text" wire:model="title" wire:keydown.enter="update('{{$reminder->id}}')"/>
-                        @else
-                            <h4 class="fw-bold text-info" wire:click="editTitle('{{$reminder->id}}','{{$reminder->title}}')">{{$reminder->title}}</h4>
-                        @endif
-                        </div>
-                        <div class="col-4 d-flex justify-content-end p-0 align-items-start">
-                            <button type="button" class="btn-close" wire:click="closeModal"></button>
-                            {{-- <button class="btn btn-danger btn-sm" wire:click="delete({{$reminder->id}})" >
-                                <i class="fa-solid fa-trash"></i>
-                            </button> --}}
-                        </div>
+                    <button class="btn btn-danger btn-sm" wire:click="delete({{$reminder->id}})" >
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <p>¿Eliminar recordatorio?</p>
