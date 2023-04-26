@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <header class="b-header" gradient bg="black">
 
+    <header class="b-header" gradient bg="black">
         <div bx-logo>
             <a href="/" class="b-header-logo">AppsCode</a>
         </div>
@@ -31,6 +31,8 @@
             </div>
         </div>
     </header>
+
+
     @yield('content')
 
     @livewireScripts
