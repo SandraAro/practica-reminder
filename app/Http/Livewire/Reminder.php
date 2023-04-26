@@ -51,7 +51,7 @@ class Reminder extends Component
         $reminder->update(['title' => $this->title]);
         $this->isEdit[$id] = false;
         $this->title = null;
-        $this->loadReminders();
+        $this->loadReminder();
     }
 
     public function delete($id, $confirm = false)
