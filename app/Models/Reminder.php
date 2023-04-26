@@ -10,7 +10,7 @@ class Reminder extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $fillable=[
+    protected $fillable = [
         'title',
         'description',
         'reminder_status_id',

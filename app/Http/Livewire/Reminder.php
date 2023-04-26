@@ -11,12 +11,7 @@ class Reminder extends Component
 {
     use selectsTrait;
 
-    public $reminder = [
-        'title',
-        'description',
-        'company_id',
-        'date'
-    ], $modal= [], $changeStatus= [], $title, $isEdit = [];
+    public $reminder = [], $modal= [], $changeStatus= [], $title, $isEdit = [];
 
     public function mount()
     {
